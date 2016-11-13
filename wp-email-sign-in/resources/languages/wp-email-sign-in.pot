@@ -1,0 +1,42 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wp Email Sign In\n"
+"POT-Creation-Date: 2016-11-13 18:02-0200\n"
+"PO-Revision-Date: 2016-11-13 18:02-0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.9\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x;_ex;_n;_nx;_n_noop;_nx_noop;"
+"translate_nooped_plural;esc_html__;esc_html_e;esc_html_x;esc_attr__;"
+"esc_attr_e;esc_attr_x\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: Core/Login.php:72
+msgid ""
+"A sign in link has been sent to your email. Please follow the instructions "
+"in the email to log in."
+msgstr ""
+
+#: Core/Login.php:81 Core/Login.php:105
+msgid ""
+"There was a problem sending your email. Please try again or contact an admin."
+msgstr ""
+
+#: Core/Login.php:90
+msgid "Invalid username or email."
+msgstr ""
+
+#: Core/Login.php:104
+msgid "Sending email..."
+msgstr ""
+
+#: resources/templates/login/login.php:3
+msgid "Sign-in using email account"
+msgstr ""
