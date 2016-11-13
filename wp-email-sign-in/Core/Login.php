@@ -11,8 +11,16 @@ use WPEmailSignIn,
     WPEmailSignIn\Core\Login\Token,
     WPEmailSignIn\Core\Login\URL;
 
+/**
+ * Class Login
+ * @package WPEmailSignIn\Core
+ */
 class Login extends Singleton{
-    
+
+    /**
+     * Init
+     * @see WPEmailSignIn\Lib\Singleton::_init
+     */
     protected function _init() {
         //Enqueue js & css
         add_action('login_enqueue_scripts', array($this, 'registerWpLoginScripts'));
@@ -25,6 +33,10 @@ class Login extends Singleton{
         add_action('wp_ajax_nopriv_emailsignin', array($this, 'signin'));
     }
 
+    /**
+     * Bootstrap all requests and check if it's an email sign in request.
+     * If request has all required params, verify if they are valid.
+     */
     public function bootstrap() {
         //Verify if params are present in the current request
         if (!empty($_REQUEST[URL::USER_PARAM]) && !empty($_REQUEST[URL::NONCE_PARAM]) && !empty($_REQUEST[URL::TOKEN_PARAM])) {
@@ -49,6 +61,9 @@ class Login extends Singleton{
         }
     }
 
+    /**
+     * Handles ajax request and send an email containing a sign in link
+     */
     public function signin() {
         // First check the nonce, if it fails the function will break
         check_ajax_referer( 'ajax-emailsignin-nonce', 'security' );
@@ -94,7 +109,10 @@ class Login extends Singleton{
         die;
         
     }
-    
+
+    /**
+     * Register and enqueue js at wp-login page
+     */
     public function registerWpLoginScripts() {
         wp_enqueue_script( 'jquery' );
 
@@ -109,6 +127,9 @@ class Login extends Singleton{
         wp_enqueue_script('sign-in-js');
     }
 
+    /**
+     * Output form part at wp-login
+     */
     public  function render() {
         //Load template script
         require  WPEmailSignIn\PLUGIN_TEMPLATE_PATH . '/login/login.php';

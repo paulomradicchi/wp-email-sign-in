@@ -7,8 +7,17 @@ use WPEmailSignIn,
     WPEmailSignIn\Core\Login\Token,
     WPEmailSignIn\Core\Login\URL;
 
+/**
+ * Class Email
+ * @package WPEmailSignIn\Core\Login
+ */
 class Email extends Singleton {
 
+    /**
+     * Sends sign link to user email
+     * @param \WP_User $User
+     * @return bool|int
+     */
     public function send(\WP_User $User) {
         $token = Token::getInstance()->generate($User);
         $url = URL::getInstance()->generate($User, $token);

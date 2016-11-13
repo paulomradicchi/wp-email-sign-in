@@ -9,7 +9,7 @@ jQuery(document).ready(function () {
             jQuery('#user_pass').parents('p').fadeIn();
             re_route_form = false;
         }
-    })
+    });
 
     //Capture form submission and re route using ajax if needed
     jQuery('#loginform').on('submit', function (e) {
